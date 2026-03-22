@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+*.egg
+
+# Data (too large for git)
+data/
+*.nc
+*.zarr/
+*.h5
+*.hdf5
+
+# Results and checkpoints
+results/
+checkpoints/
+wandb/
+*.ckpt
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Typst build artifacts
+*.pdf
+
+# Jupyter
+.ipynb_checkpoints/

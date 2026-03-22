@@ -1,0 +1,38 @@
+[project]
+name = "final"
+version = "0.1.0"
+description = "Spherical DYffusion replication at 5.625-degree resolution with M-FFF comparison"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "matplotlib>=3.10.7",
+    "numpy>=2.3.4",
+    "pytorch-triton-rocm>=0.0.1",
+    "scipy>=1.16.3",
+    "torch>=2.9.1",
+    "tqdm>=4.67.1",
+    "xarray",
+    "netcdf4",
+    "torch-harmonics",
+    "dask>=2026.3.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ipywidgets>=8.1.8",
+    "jupyterlab>=4.4.10",
+    "marimo>=0.17.8",
+]
+
+[[tool.uv.index]]
+name = "pytorch-rocm"
+url = "https://download.pytorch.org/whl/rocm6.4"
+explicit = true
+
+[tool.uv.sources]
+torch = [
+  { index = "pytorch-rocm", marker = "sys_platform == 'linux'" },
+]
+pytorch-triton-rocm = [
+  { index = "pytorch-rocm", marker = "sys_platform == 'linux'" },
+]
